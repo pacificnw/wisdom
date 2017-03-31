@@ -1,0 +1,98 @@
+import java.util.*;
+
+public class Graph {
+	
+	private Hashtable<Integer, Vertex> vertices;
+	
+	public Graph() {
+		vertices = new Hashtable<Integer, Vertex>();
+	}
+	
+	public void printGraphVertexList() {
+		System.out.println("Graph contains " + vertices.size() + " vertices");
+		for (Integer vertexKey : vertices.keySet()) {
+			System.out.print("[" + vertexKey + "]");
+			Vertex vertex = vertices.get(vertexKey);
+			
+			int i = 0;
+			while (vertex != null && i < 10) {
+				System.out.print("[Vertex " + vertex.value + "]\n");
+				vertex = vertex.next;
+				i++;
+			}
+		}
+	}
+	
+	/*
+	 * The order of origin and destination will always be ordered	
+	 */
+	public void addVertex(Vertex origin, Vertex destination) {
+		
+		Vertex minVertex;
+		Vertex maxVertex;
+		
+		if (origin == null && destination == null) {
+			return;
+		} else if (origin == null) {
+			minVertex = origin;
+			maxVertex = destination;
+		} else if (destination == null) {
+			minVertex = destination;
+			maxVertex = origin;
+		} else {
+			minVertex = (origin.value <= destination.value) ? origin : destination;
+			maxVertex = (minVertex.value == origin.value) ? destination : origin;
+		}
+		
+		insertVertex(minVertex, maxVertex);
+		
+	}
+	
+	private void insertVertex(Vertex origin, Vertex destination) {
+		
+		if (origin == null) {
+			System.out.println("About to default " + destination.value);
+			vertices.put(destination.value, destination);
+		} else if (vertices.containsKey(origin.value)) {
+			// Found, get the list and traverse it, add to list
+			vertices.put(origin.value, origin.addVertex(destination));
+			System.out.println("About to append " + origin.value + " " + destination.value);
+		} else {
+			vertices.put(origin.value, destination);
+			System.out.println("About to insert " + origin.value + " " + destination.value);
+		}
+	}
+		
+	private void insertEdge(Vertex origin, Vertex destination) {
+		
+	
+	}
+	
+/*
+	public HashMap<Integer, LinkedList> adjacencyList;
+	
+	public Graph() {
+		adjacencyList = new HashMap<Integer, LinkedList>();
+	}
+	*/
+	/*
+	public void addVertex(Vertex vertex) {
+		if (adjacencyList.containsKey(vertex.value)) {
+			Vertex vertexAdd = adjacencyList.get(vertex.value);
+			vertexAdd
+			//search the list and add it
+		} else { 
+			
+		}
+	}*/
+	/*
+	public void graphDepthFirstSearch(Vertex origVertex) {
+		// origVertex.visit();
+		// origVertex.visited = true;
+		
+		for (Vertex destVertex : such that (origVertex, destVertex)) {  // This is done for every edge, in order (key)
+			if ()
+		}
+	}
+	*/
+}

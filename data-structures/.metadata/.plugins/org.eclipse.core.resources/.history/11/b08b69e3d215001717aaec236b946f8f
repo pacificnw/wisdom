@@ -1,0 +1,11 @@
+public class Vertex {
+	int value;
+	boolean visited;
+	Vertex next;
+		
+	public Vertex(int initialValue) {
+		value = initialValue;
+		visited = false;
+		next = null;
+	}
+}

@@ -1,0 +1,18 @@
+Adding elements to array 
+ ... 0 ... 50,000,000 ... 100,000,000 ... 150,000,000 ... 200,000,000 ... 250,000,000
+
+Number Elements : 300,000,000 Iterative Search : Complexity O(n)
+      Found At  Search Value   Elapsed Time
+            -1  -107,234,981 192,541,126 ns
+            -1   429,452,466 152,567,374 ns
+            -1   406,326,849 148,345,816 ns
+    34,080,617   -81,842,929  17,374,167 ns
+   211,324,728   272,646,352 106,214,532 ns
+
+Number Elements : 300,000,000 Binary Search : Complexity O(log(n))
+      Found At  Search Value   Elapsed Time
+            -1  -107,234,981      99,431 ns
+            -1   429,452,466     106,345 ns
+            -1   406,326,849      82,311 ns
+    34,080,617   -81,842,929      75,068 ns
+   211,324,728   272,646,352      66,507 ns

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="BusStation/src"/>
+	<classpathentry kind="src" path="Dice/src"/>
+	<classpathentry kind="src" path="HelloWorld/src"/>
+	<classpathentry kind="src" path="Root/src"/>
+	<classpathentry kind="src" path="SampleClock/src"/>
+	<classpathentry kind="src" path="StringExample/src"/>
+	<classpathentry kind="src" path="StringManipulation/src"/>
+	<classpathentry kind="src" path="SystemPerformance/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="BusStation/bin"/>
+</classpath>

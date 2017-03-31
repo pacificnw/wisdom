@@ -1,0 +1,1 @@
+INDEX VERSION 1.129+F:\Git\algorithms\mathematics\.metadata\.plugins\org.eclipse.jdt.core
